@@ -46,6 +46,15 @@ def seeded_dropout_kernel(
     tl.store(keep_mask_ptr+offsets, keep_mask, mask)
 
 
+@triton.jit
+def matrix_dropout_kernel():
+    pass
+
+# TODO: imple the matrix about dropout
+def matrix_dropout():
+    pass
+
+
 def seeded_dropout(x, p, seed):
     assert x.is_contiguous()
     element_size = x.numel()
